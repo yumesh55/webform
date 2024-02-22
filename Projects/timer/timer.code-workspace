@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../base projects"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "timer"
+	}
+}
