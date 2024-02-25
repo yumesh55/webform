@@ -8,3 +8,11 @@ module.exports = {
     ? '/https://github.com/yumesh55/webform.git/'
     : '/'
 }
+
+module.exports = {
+  pwa: {
+      workboxOptions: {
+        exclude: [/_redirects/]
+      }
+    }
+}

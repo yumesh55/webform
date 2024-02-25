@@ -4,7 +4,9 @@
 </template>
 
 <script>
+
 /*Import regform */
+
 import regform from './components/regform.vue'
 
 
