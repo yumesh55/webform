@@ -9,7 +9,6 @@
   
       <i class="fa-solid fa-key"></i><label>Password:</label>
       <input type="password" required  v-model="password" @input="validateForm">
-      <div v-if="showValidationMessage" class="validation-message">Please fill the Password</div>
   
       
       <i class="fa-solid fa-language"></i><label>Select your language</label>
@@ -18,6 +17,7 @@
           <option value="English">English</option>
           <option value="Tamil">Tamil</option>
           <option value="Hindi">Hindi</option>
+          <option value="Telugu">Telugu</option>
       </select>
   
       <!--Button-->
@@ -46,9 +46,6 @@
           this.isFormValid = true;
           
           
-            } else if( !this.password.trim()){
-               this.showValidationMessage = true;
-
             }
             
             else {
@@ -74,11 +71,12 @@
 
    <style>
    
-   .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
     }
+
   .fa-regular{
   display: inline-block;
   vertical-align: middle;
@@ -87,6 +85,7 @@
   border-radius: 50%;
   text-align: center;
   }
+  
   .fa-solid{
   display: inline-block;
   vertical-align: middle;
@@ -95,6 +94,7 @@
   border-radius: 50%;
   text-align: center;
   }
+
   form {
   max-width: 420px;
   margin: 30px auto;
@@ -104,6 +104,7 @@
   border-radius: 10px;
   font-weight: bold;
   }
+
   label {
   color: rgb(0, 0, 0);
   display: inline-block;
@@ -113,6 +114,7 @@
   letter-spacing: 1px;
   font-weight: bold;
   }
+
   input, select {
   display: block;
   padding: 10px 6px;
@@ -122,6 +124,7 @@
   border-bottom: solid #ddd;
   color: #555;
   }
+
   button{
   background: #0b6dff;
   border: 0;
@@ -130,9 +133,11 @@
   color: white;
   border-radius: 20px;
   }
+
   .submit{
   text-align: center;
   }
+  
   .error{
   color: #1d570d;
   margin-top: 10px;
@@ -140,9 +145,7 @@
   font-weight: bold;
   }
 
-  .validation-message{
-    color: red;
-  }
+
    
   /*Media query for mobile device*/
   @media only screen and (max-width: 767px) {
