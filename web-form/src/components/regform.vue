@@ -12,7 +12,7 @@
   
       
       <i class="fa-solid fa-language"></i><label>Select your language</label>
-       <select id="selectOption" v-model="selectedOption" @input="validateForm" required>
+       <select id="selectOption" v-model="selectedOption" required @input="validateForm">
         <option value="">-- Please select --</option>
           <option value="English">English</option>
           <option value="Tamil">Tamil</option>
@@ -42,21 +42,18 @@
     },
       methods: {
       validateForm() {
-        if (!this.email.trim() !== '' && this.password.trim() ) {
-          this.isFormValid = true;
-          
-          
-            }
-            
-            else {
+        if (!this.email.trim() !== '' && this.password.trim() !== '') {
+          this.isFormValid = true; }
+              
+             else {
           this.isFormValid = false;
-         
-           }
+         }
           },
   
       submitForm() {
-              if (this.isFormValid) {
-              alert('Form submitted successfully');
+       if (this.isFormValid) {
+        console.log('Form');
+       alert('Form submitted successfully');
         }
       }
     }
