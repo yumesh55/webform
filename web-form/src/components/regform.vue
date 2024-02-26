@@ -148,7 +148,7 @@
   @media only screen and (max-width: 767px) {
     .container {
       padding: 0 100px;
-      background-image: url('C:\Users\YUMKRISH\OneDrive\Desktop\github projects\webform\web-form\src\assets\Figmadesign.png');
+      
     }
   }
   </style>
