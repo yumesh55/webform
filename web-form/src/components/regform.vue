@@ -2,29 +2,33 @@
 <!--Form Page Content-->
 
   <form @submit="submitForm">
-    <div class="container">
-    <i class="fa-solid fa-right-to-bracket"></i></div>
-     <i class="fa-regular fa-envelope"></i><label>Email ID:</label>
+   <div class="logo">
+    <img src="../assets/logo1.png" alt="logo">
+    </div>
+    <h2 class="text">Welcome</h2>  
+    <p class="normal-text">Please enter the details provided by your clinic</p>
+     
+      <label>Enter your email:</label>
       <input type="email" required v-model="email" @input="validateForm">
   
-      <i class="fa-solid fa-key"></i><label>Password:</label>
+      <label>Enter your password:</label>
       <input type="password" required  v-model="password" @input="validateForm">
   
-      
-      <i class="fa-solid fa-language"></i><label>Select your language</label>
-       <select id="selectOption" v-model="selectedOption" required @input="validateForm">
-        <option value="">-- Please select --</option>
+       <label >Select your language </label>
+          <select id="selectOption" v-model="selectedOption" required @input="validateForm" class="custom-select" >
           <option value="English">English</option>
           <option value="Tamil">Tamil</option>
           <option value="Hindi">Hindi</option>
           <option value="Telugu">Telugu</option>
-      </select>
-  
+          </select>
+      
       <!--Button-->
       <div class="submit">
           <button :disabled="!isFormValid" type="submit">Get Started</button>
       </div>
+      <p class="copyright">Copyright &copy; 2024 Longboat | Privacy Policy</p>
      </form>
+     
   </template>
   <!--Form Content End!!-->
   
@@ -37,7 +41,7 @@
           email : '',
           password : '',
           isFormValid: '',
-          selectedOption:''
+          selectedOption:'English'
       };
     },
       methods: {
@@ -68,69 +72,44 @@
 
    <style>
    
-  .container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    }
-
-  .fa-regular{
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 5px;
-  line-height: 20px;
-  border-radius: 50%;
-  text-align: center;
-  }
-  
-  .fa-solid{
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 5px;
-  line-height: 20px;
-  border-radius: 50%;
-  text-align: center;
-  }
-
-  form {
+   form {
   max-width: 420px;
   margin: 30px auto;
-  background: white;
   text-align: left;
   padding: 40px;
   border-radius: 10px;
-  font-weight: bold;
-  }
+   
+    }
 
   label {
-  color: rgb(0, 0, 0);
+  color: rgb(108, 108, 108);
   display: inline-block;
   margin: 25px 0 15px;
-  font-size: 0.6rem;
-  text-transform: uppercase;
+  font-size: 0.8rem;
   letter-spacing: 1px;
-  font-weight: bold;
   }
 
   input, select {
   display: block;
   padding: 10px 6px;
-  width: 100%;
+  width: 90%;
   box-sizing: border-box;
-  border: none;
-  border-bottom: solid #ddd;
-  color: #555;
+  border: 0;
   }
 
   button{
-  background: #0b6dff;
+  background: #446cff;
   border: 0;
-  padding: 10px 20px;
+  padding: 10px 90px;
   margin-top: 20px;
   color: white;
-  border-radius: 20px;
-  }
+  cursor: pointer;
+  width: 90%;
+  position: relative;
+  right: 5%;
 
+  }
+  
   .submit{
   text-align: center;
   }
@@ -142,13 +121,41 @@
   font-weight: bold;
   }
 
+  .logo{
+  position: relative;
+  text-align: center; 
+}
 
-   
-  /*Media query for mobile device*/
-  @media only screen and (max-width: 767px) {
-    .container {
-      padding: 0 100px;
-      
+ .normal-text {
+  font-weight: normal;
+  color:#949494;
+  margin-top: 4px;
+}
+ .text{
+  font-weight: normal;
+  color:#000000;
+  margin-bottom: 5px;
+}
+ .copyright {
+  position: absolute;
+  bottom: 2%;
+  right: 1%;
+  font-size: 12px; 
+  color: #999; 
+}
+ .custom-select {
+  width: 90%; 
+  cursor: pointer;
+  background: none;
+  background-color: white;
+  
+}
+
+/*Media query for mobile device*/
+  @media only screen and (max-width: 480px) {
+    .bg-image{
+    display: none;
+        
     }
   }
   </style>
